@@ -1,0 +1,1 @@
+$AIRLIFT_APP_ENGINE_HOME/bin/appcfg.sh --num_days=$1 --severity=$2 request_logs war workspace/log/app.log

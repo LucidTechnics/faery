@@ -1,0 +1,15 @@
+package com.lucidtechnics.faery
+
+A Cocktail
+has a drug "list" which has type set
+can be viewed or collected or created or updated or deleted by noone
+
+An Adverse Reaction has properties from a Cocktail
+has a name which is not required
+has a probability which has type double and is not required
+can be collected by all
+
+A Patient
+has a sex which has allowed values "male, female" and is not required
+has an age which has type whole number and is less than 150 and is not required
+can be viewed or collected or created or updated or deleted by noone

@@ -1,0 +1,12 @@
+/* this is to get rid of annoying tooltip in IE for the angular slider
+ * https://github.com/venturocket/angular-slider
+ */
+	
+::-ms-tooltip {
+    display: none;
+}
+
+#adverse-reactions-san-key
+{
+	margin-top: 20px;
+}

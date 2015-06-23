@@ -1,0 +1,64 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Adverse Reactions Report</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css({.tmp,app}) styles/main.css -->
+
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/faery.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<!-- endbuild -->
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		   <div class="nav navbar-nav">
+			<h3 class="navbar-text">Faery - FDA Adverse Event Reports Utility </h3>
+		   </div>
+		   <div><h4 class="navbar-text">Explore Adverse Reactions for Combinations of drugs</h4>
+		   </div>
+		</div>
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div ng-app="faery" class="col-md-12">
+		<div ng-controller="AdverseReaction" class="col-md-9">
+		   <div ng-repeat="item in drugList track by $index"
+					class="col-md-2">
+			   <input type="text" ng-model="drugList[$index]"
+				 typeahead="drug for drug in drugs | filter:$viewValue | limitTo:8"
+					  placeholder="Type drug here"
+					 >
+			   <button  ng-click="remove($index)"><span class="glyphicon glyphicon-remove"/></button>
+		   </div>
+		   
+		   <button ng-show="needAdd()" ng-click="add()">Add</button>
+		</div>
+
+	</div>
+
+	<div id="adverse-reactions-san-key" class="col-md-12" style="width: 900px; height: 300px;"></div>
+
+	<script type="text/javascript" src="/bower_components/underscore/underscore.js"></script>
+	<script type="text/javascript" src="/bower_components/underscore.string/lib/underscore.string.js"></script>
+	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-touch/angular-touch.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	
+	<script type="text/javascript" src="/scripts/app/faery.js"></script>
+	<script type="text/javascript" src="/scripts/adversereaction/app.js"></script>
+</body>
+
+</html>
