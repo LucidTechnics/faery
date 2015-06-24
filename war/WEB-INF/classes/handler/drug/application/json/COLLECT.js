@@ -12,11 +12,10 @@ exports.handle = function(_web)
 	
 	_web.getContentContext().isJson();
 	
-	_web.setContent(JSON.stringify(
-		_.map(
-			  _.filter(drugs, function(v) {
-					return new RegExp(drug.name, 'i').test((v.term && v.term.toLowerCase())||'');
-				}),
+	_web.setContent(JSON.stringify(_.map(_.filter(drugs,
+		function(v) {
+			return new RegExp(drug.name, 'i').test((v.term && v.term.toLowerCase())||'');
+		}),
 		function(v) {
 			return (v.term && v.term.toLowerCase())||'';
 		})
