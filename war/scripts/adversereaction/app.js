@@ -60,7 +60,7 @@
 
 		$scope.needAdd = function()
 		{
-			return !$scope.drugList || $scope.drugList.length < 20;
+			return !$scope.drugList || $scope.drugList.length < 4;
 		};
 
 		$scope.selectedDrug = function(n)
