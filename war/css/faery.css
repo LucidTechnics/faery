@@ -10,3 +10,19 @@
 {
 	margin-top: 20px;
 }
+
+.sub-heading
+{
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+
+.drug-list
+{
+	margin-top: 10px;
+}
+
+.drug-name
+{
+	font-size: 1em;
+}

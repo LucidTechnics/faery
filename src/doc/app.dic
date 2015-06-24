@@ -1,5 +1,9 @@
 package com.lucidtechnics.faery
 
+A Drug
+has a name
+can be viewed and collected by all
+
 A Cocktail
 has a drug "list" which has type set
 can be viewed or collected or created or updated or deleted by noone

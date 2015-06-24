@@ -20,6 +20,7 @@ public class AppProfile
 		
 		
 		resourceSecurityMetadataMap.put("cocktail", new java.util.HashMap<String, java.util.Set<String>>()); 
+		resourceSecurityMetadataMap.put("drug", new java.util.HashMap<String, java.util.Set<String>>()); 
 		resourceSecurityMetadataMap.put("patient", new java.util.HashMap<String, java.util.Set<String>>()); 
 		resourceSecurityMetadataMap.put("adversereaction", new java.util.HashMap<String, java.util.Set<String>>()); 
 
@@ -29,6 +30,9 @@ public class AppProfile
 		resourceSecurityMetadataMap.get("cocktail").put("HEAD", new java.util.HashSet<String>()); 
 		resourceSecurityMetadataMap.get("cocktail").put("DELETE", new java.util.HashSet<String>()); 
 		resourceSecurityMetadataMap.get("cocktail").put("GET", new java.util.HashSet<String>()); 
+		resourceSecurityMetadataMap.get("drug").put("COLLECT", new java.util.HashSet<String>()); 
+		resourceSecurityMetadataMap.get("drug").put("HEAD", new java.util.HashSet<String>()); 
+		resourceSecurityMetadataMap.get("drug").put("GET", new java.util.HashSet<String>()); 
 		resourceSecurityMetadataMap.get("patient").put("COLLECT", new java.util.HashSet<String>()); 
 		resourceSecurityMetadataMap.get("patient").put("PUT", new java.util.HashSet<String>()); 
 		resourceSecurityMetadataMap.get("patient").put("POST", new java.util.HashSet<String>()); 
@@ -43,6 +47,9 @@ public class AppProfile
 		resourceSecurityMetadataMap.get("cocktail").get("HEAD").add("noone"); 
 		resourceSecurityMetadataMap.get("cocktail").get("DELETE").add("noone"); 
 		resourceSecurityMetadataMap.get("cocktail").get("GET").add("noone"); 
+		resourceSecurityMetadataMap.get("drug").get("COLLECT").add("all"); 
+		resourceSecurityMetadataMap.get("drug").get("HEAD").add("all"); 
+		resourceSecurityMetadataMap.get("drug").get("GET").add("all"); 
 		resourceSecurityMetadataMap.get("patient").get("COLLECT").add("noone"); 
 		resourceSecurityMetadataMap.get("patient").get("PUT").add("noone"); 
 		resourceSecurityMetadataMap.get("patient").get("POST").add("noone"); 

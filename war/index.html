@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Adverse Reactions Report</title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css({.tmp,app}) styles/main.css -->
 
@@ -16,36 +16,41 @@
 	<!-- endbuild -->
 </head>
 <body>
-	<nav class="navbar navbar-default" role="navigation">
-	  <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		   <div class="nav navbar-nav">
-			<h3 class="navbar-text">Faery - FDA Adverse Event Reports Utility </h3>
-		   </div>
-		   <div><h4 class="navbar-text">Explore Adverse Reactions for Combinations of drugs</h4>
-		   </div>
-		</div>
-	  </div><!-- /.container-fluid -->
-	</nav>
-
-	<div ng-app="faery" class="col-md-12">
-		<div ng-controller="AdverseReaction" class="col-md-9">
-		   <div ng-repeat="item in drugList track by $index"
-					class="col-md-2">
-			   <input type="text" ng-model="drugList[$index]"
-				 typeahead="drug for drug in drugs | filter:$viewValue | limitTo:8"
-					  placeholder="Type drug here"
-					 >
-			   <button  ng-click="remove($index)"><span class="glyphicon glyphicon-remove"/></button>
-		   </div>
-		   
-		   <button ng-show="needAdd()" ng-click="add()">Add</button>
-		</div>
-
+    <div class="container"> 
+		<h3 class="heading row col-xs-12 col-md-12">Faery - FDA Adverse Event Reports Utility </h3>
+		<h5 class="sub-heading row col-xs-12 col-md-12">Discover
+		   possible adverse reactions for the combinations of drugs
+		   your patient is taking.</h4>
 	</div>
 
-	<div id="adverse-reactions-san-key" class="col-md-12" style="width: 900px; height: 300px;"></div>
+	<div class="container">
+		<div ng-app="faery" class="col-xs-12 col-md-12">
+			<div class="col-xs-12 col-md-12" ng-controller="AdverseReaction">
+			   <div class="row">
+				   <label class="sr-only" for="add-drug-input">Start by typing a drug name here</label>
+				   <input class="col-md-4" id="add-drug-input" ng-show="needAdd()" type="text" ng-model="newDrug"
+					 typeahead="drug for drug in getMatchingDrugs(newDrug) | filter:$viewValue | limitTo:8"
+						  typeahead-loading="loadingDrugs"
+						  typeahead-on-select="selectedDrug($item, $model, $label)"
+						  placeholder="Start by typing a drug name here">
+						 <i ng-cloak ng-show="loadingDrugs"
+							  class="glyphicon glyphicon-refresh"></i>
+				</div>
+				<div class="row drug-list">
+				   <div class="btn-group" role="group" ng-repeat="item in drugList track by $index"
+							class="col-xs-2 col-md-2">
+						<span ng-cloak
+							  class="drug-name label label-info">{{item}} 
+							<span ng-click="remove($index)" class="glyphicon glyphicon-remove"/></span>
+						</span>
+				   </div>
+			   </div>
+			</div>
+
+		</div>
+
+		<div id="adverse-reactions-san-key" class="col-xs-12 col-md-12"></div>
+	</div>
 
 	<script type="text/javascript" src="/bower_components/underscore/underscore.js"></script>
 	<script type="text/javascript" src="/bower_components/underscore.string/lib/underscore.string.js"></script>
