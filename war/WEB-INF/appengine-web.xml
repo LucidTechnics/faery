@@ -2,7 +2,7 @@
 <!-- Do not change this file!  Use the appropriate
 airlift.build.{env} script instead! - Bediako -->
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-  <application>faery-dev</application>
-  <version>dev-20150623-0</version>
+  <application>desktop-airlift-env</application>
+  <version>desktop-20150619-0</version>
   <threadsafe>false</threadsafe>
 </appengine-web-app>

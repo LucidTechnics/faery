@@ -1,0 +1,27 @@
+# Make sure to edit this file within src/cfg/travis.yml to ensure that your modifications are not overwritten by the build.
+
+language: java
+jdk:
+  - openjdk7
+
+before_script:
+  - mkdir dist
+  - mkdir workspace
+  - mkdir workspace/AppEngineSDK
+  - cd workspace/AppEngineSDK
+  - travis_retry wget https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.22.zip; unzip appengine-java-sdk-1.9.22.zip
+  - cd ../..
+  - export ANT_OPTS=-javaagent:$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22/lib/agent/appengine-agent.jar
+  - export AIRLIFT_APP_ENGINE_HOME=$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22
+  - ant -Dairlift.env=desktop runserver &
+
+# whitelist
+branches:
+  only:
+    - master
+    - faery-dev
+
+notifications:
+  email:
+    - ci@lucidtechnics.com
+    - bediako.george@lucidtechnics.com
