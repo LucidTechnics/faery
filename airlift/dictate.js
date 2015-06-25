@@ -1123,9 +1123,9 @@ function createNewResource(_resource, _parser)
 	return newResource;
 }
 
-importClass(org.antlr.runtime.ANTLRFileStream);
-importClass(org.antlr.runtime.CommonTokenStream);
-importClass(org.antlr.runtime.debug.DebugEventSocketProxy);
+importClass(Packages.org.antlr.runtime.ANTLRFileStream);
+importClass(Packages.org.antlr.runtime.CommonTokenStream);
+importClass(Packages.org.antlr.runtime.debug.DebugEventSocketProxy);
 
 var fileSeparator = Packages.java.io.File.separator;
 var dictationFile = project.getProperty("src.doc") + fileSeparator + 'app.dic';
