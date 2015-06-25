@@ -13,7 +13,6 @@ before_script:
   - cd ../..
   - export ANT_OPTS=-javaagent:$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22/lib/agent/appengine-agent.jar
   - export AIRLIFT_APP_ENGINE_HOME=$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22
-  - ls -al war; ls -al war/WEB-INF; ls -al war/WEB-INF/lib;
   - ant -Dairlift.env=desktop runserver &
 
 # whitelist

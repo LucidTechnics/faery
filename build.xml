@@ -395,7 +395,7 @@
 		</exec>
 	</target>
 	
-	<target name="dictate" depends="clean, createPackageStructure">
+	<target name="dictate" depends="clean, createPackageStructure">		
 	   	<property name="run.class.path" refId="precompile.classpath"/>
 		<echo message="${run.class.path}"/>
 		<script language="javascript" src="airlift/dictate.js">
