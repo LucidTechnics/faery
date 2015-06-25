@@ -1023,7 +1023,15 @@ function writeAppProfile(_contents)
 							 "airlift" + fileSeparator + "app" +
 							 fileSeparator;
 	var file = new Packages.java.io.File(dir + fileSeparator + "AppProfile.java");
-	file["delete"]();
+	try
+	{
+		file["delete"]();
+	}
+	catch(e)
+	{
+		//delete unsuccessful
+		print('Could not delete file: ' + dir + fileSeparator + "AppProfile.java"); 
+	}
 	writeFile(file, _contents);
 }
 
@@ -1035,7 +1043,16 @@ function writeResourceMeta(_metaName, _contents)
 			  "meta" + fileSeparator + "r";
 
 	var file = new Packages.java.io.File(dir + fileSeparator + _metaName.toLowerCase() + ".js");
-	file["delete"]();
+	try
+	{
+		file["delete"]();
+	}
+	catch(e)
+	{
+		//delete unsuccessful
+		print('Could not delete file: ' + dir + fileSeparator + _metaName.toLowerCase() + ".js"); 
+	}
+	
 	writeFile(file, _contents);
 }
 
@@ -1047,7 +1064,17 @@ function writeBrowserResourceMeta(_metaName, _contents)
 		  "gen" + fileSeparator + "meta" + fileSeparator + "r";
 
 	var file = new Packages.java.io.File(dir + fileSeparator + _metaName.toLowerCase() + ".js");
-	file["delete"]();
+
+	try
+	{
+		file["delete"]();
+	}
+	catch(e)
+	{
+		//delete unsuccessful
+		print('Could not delete file: ' + dir + fileSeparator + _metaName.toLowerCase() + ".js"); 
+	}
+
 	writeFile(file, _contents);
 }
 
