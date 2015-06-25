@@ -108,7 +108,6 @@
 		<fileset dir="${basedir}/">
 			<include name="airlift-*core.jar" />
 		</fileset>
-				
 	</path>
 
 	<path id="appserver.classpath">
