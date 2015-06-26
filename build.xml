@@ -456,7 +456,16 @@
 		    <classpath refid="test.class.path"/>			
 		</script>
 	</target>	
-	
+
+	<target name="karma">
+		<exec executable="karma">
+			<arg value="start"/>
+			<arg value="faery-dev.conf.js"/>
+			<arg value="--log-level debug"/>
+			<arg value="--single-run"/>
+		</exec>
+	</target>	
+
 	<target name="itest">
 	   <sequential>
 		
