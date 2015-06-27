@@ -447,7 +447,7 @@
 
     </target>
 
-	<target name="test" depends="utest"> </target>	
+	<target name="test" depends="utest, karma"> </target>	
 
 	<target name="utest" depends="test-jar">
 	   	<property name="run.class.path" refId="test.class.path"/>
@@ -460,7 +460,7 @@
 	<target name="karma">
 		<exec executable="karma">
 			<arg value="start"/>
-			<arg value="faery-dev.conf.js"/>
+			<arg value="karma.conf.js"/>
 			<arg value="--log-level debug"/>
 			<arg value="--single-run"/>
 		</exec>

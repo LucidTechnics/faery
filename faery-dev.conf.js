@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Jun 25 2015 06:40:23 GMT-0400 (EDT)
+// Generated on Fri Jun 26 2015 03:11:19 GMT-0400 (EDT)
 
 module.exports = function(config) {
   config.set({
@@ -7,6 +7,14 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
+	plugins:[
+			 'karma-jasmine',
+			 'karma-coverage',
+			 'karma-junit-reporter',
+			 'karma-phantomjs-launcher',
+			 'karma-chrome-launcher',
+			 'karma-firefox-launcher'
+			],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -14,12 +22,15 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      'src/test/scripts/jasmine/**/*Spec.js',
-      'war/scripts/**/*.js',
-      'war/bower_components/**/*.js',
-      'war/css/**/*.*'
-    ],
+	files: [
+			,
+		'war/bower_components/**/*.js',
+		'war/css/**/*.css',
+		'war/bower_components/**/*.css',
+		'https://www.google.com/jsapi',
+		'src/test/script/jasmine/**/*Spec.js',
+		'war/scripts/**/*.js'
+	],
 
 
     // list of files to exclude
@@ -40,7 +51,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 8080,
+    port: 9876,
 
 
     // enable / disable colors in the output (reporters and logs)
@@ -58,7 +69,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome', 'PhantomJS'],
 
 
     // Continuous Integration mode
