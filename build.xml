@@ -446,7 +446,7 @@
 
     </target>
 
-	<target name="test" depends="utest"> </target>	
+	<target name="test" depends="utest, karma"> </target>	
 
 	<target name="utest" depends="test-jar">
 	   	<property name="run.class.path" refId="test.class.path"/>
