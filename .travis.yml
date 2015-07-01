@@ -13,11 +13,6 @@ before_script:
   - cd ../..
   - export ANT_OPTS=-javaagent:$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22/lib/agent/appengine-agent.jar
   - export AIRLIFT_APP_ENGINE_HOME=$HOME/build/LucidTechnics/faery/workspace/AppEngineSDK/appengine-java-sdk-1.9.22
-  - npm install -g phantomjs
-  - npm install -g karma
-  - npm install -g karma-phantomjs-launcher
-  - npm install -g bower
-  - bower install
   - ant -Dairlift.env=desktop runserver &
 
 # whitelist

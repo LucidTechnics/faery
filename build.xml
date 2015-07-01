@@ -349,10 +349,9 @@
 	<target name="runserver" depends= "discoverNodeModules, test-jar" description="Starts the development server.">
 	  <dev_appserver war="${war}">
 		 <options>
-			   <arg value="--jvm_flag=-Ddatastore.default_high_rep_job_policy_unapplied_job_pct=20"/>
-		        <arg value="--jvm_flag=-Dappengine.user.timezone=UTC"/>
-				<arg value="--jvm_flag=-Xmx1024m"/>
-
+			<arg value="--jvm_flag=-Ddatastore.default_high_rep_job_policy_unapplied_job_pct=20"/>
+			<arg value="--jvm_flag=-Dappengine.user.timezone=UTC"/>
+			<arg value="--jvm_flag=-Xmx1024m"/>
 		 </options>
 	  </dev_appserver>
 	</target>
