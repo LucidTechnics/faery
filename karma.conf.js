@@ -30,7 +30,7 @@ module.exports = function(config) {
 			'war/bower_components/underscore.string/lib/underscore.string.js',
 			'war/scripts/app/faery.js',
 			'war/scripts/adversereaction/app.js',
-			'src/test/script/jasmine/**/*Spec.js'
+			'src/test/script/unit/**/*Spec.js'
 		   ],
 
 
