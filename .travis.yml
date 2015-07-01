@@ -19,6 +19,11 @@ before_script:
   - npm install -g karma
   - npm install -g karma-phantomjs-launcher
   - npm install -g bower
+  - npm install karma-jasmine --save-dev
+  - npm install karma-coverage --save-dev
+  - npm install karma-junit-reporter --save-dev
+  - npm install karma-chrome-launcher --save-dev
+  - npm install karma-firefox-launcher --save-dev
   - bower install
 
 # whitelist
