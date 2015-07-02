@@ -35,9 +35,9 @@ branches:
   only:
     - master
     - ci
-	- qa
-	- test
-	- dev
+    - qa
+    - test
+    - dev
 
 notifications:
   email:
