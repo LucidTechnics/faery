@@ -459,7 +459,7 @@
 	<target name="karma">
 		<exec executable="karma">
 			<arg value="start"/>
-			<arg value="faery-unit.conf.js"/>
+			<arg value="faery-unit-travis.conf.js"/>
 			<arg value="--log-level debug"/>
 			<arg value="--single-run"/>
 		</exec>
