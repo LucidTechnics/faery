@@ -23,15 +23,22 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
 	files: [
-			,
-		'war/bower_components/**/*.js',
-		'war/css/**/*.css',
-		'war/bower_components/**/*.css',
-		'https://www.google.com/jsapi',
-		'src/test/script/unit/**/*Spec.js',
-		'war/scripts/**/*.js'
+			'war/css/**/*.css',
+			'war/bower_components/angular/angular.js',
+			'war/bower_components/angular-mocks/angular-mocks.js',
+			'war/bower_components/angular-sanitize/angular-sanitize.min.js',
+			'war/bower_components/angular-route/angular-route.min.js',
+			'war/bower_components/angular-animate/angular-animate.min.js',
+			'war/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+			'war/bower_components/angular-touch/angular-touch.min.js',
+			'war/bower_components/**/*.css',
+			'http://www.google.com/jsapi',
+			'war/bower_components/underscore/underscore.js',
+			'war/bower_components/underscore.string/lib/underscore.string.js',
+			'war/scripts/app/faery.js',
+			'war/scripts/adversereaction/app.js',
+			'src/test/script/unit/**/*Spec.js'
 	],
-
 
     // list of files to exclude
     exclude: [
